@@ -1,5 +1,6 @@
 FROM node:16
-RUN npm install -g eas-cli
+RUN npm i -g npm && \
+  npm install -g eas-cli
 
 # Install OpenJDK
 
@@ -25,11 +26,11 @@ RUN mkdir -p android_sdk/cmdline-tools/latest && \
 RUN yes | sdkmanager --licenses
 
 # Pre-install necessary packages
-RUN sdkmanager --install "patcher;v4" 
-RUN sdkmanager --install "ndk;21.4.7075529" 
-RUN sdkmanager --install "cmake;3.18.1" 
-RUN sdkmanager --install "emulator" 
-RUN sdkmanager --install "platform-tools" 
-RUN sdkmanager --install "tools" 
-RUN sdkmanager --install "build-tools;30.0.3" 
-RUN sdkmanager --install "platforms;android-31"
+RUN sdkmanager --install "patcher;v4" && \
+  sdkmanager --install "ndk;21.4.7075529" && \
+  sdkmanager --install "cmake;3.18.1" && \
+  sdkmanager --install "emulator" && \
+  sdkmanager --install "platform-tools" && \
+  sdkmanager --install "tools" && \
+  sdkmanager --install "build-tools;30.0.3" && \
+  sdkmanager --install "platforms;android-31"
