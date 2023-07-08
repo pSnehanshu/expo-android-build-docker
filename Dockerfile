@@ -27,7 +27,7 @@ RUN yes | sdkmanager --licenses
 
 # Pre-install necessary packages
 RUN sdkmanager --install "patcher;v4" && \
-  sdkmanager --install "ndk;21.4.7075529" && \
+  sdkmanager --install "ndk;23.1.7779620" && \
   sdkmanager --install "cmake;3.18.1" && \
   sdkmanager --install "emulator" && \
   sdkmanager --install "platform-tools" && \
